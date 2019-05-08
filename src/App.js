@@ -4,7 +4,7 @@ import React from 'react';
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <header>
         <form className="search-form">
           <input type="search" name="search" placeholder="Search" required/>
