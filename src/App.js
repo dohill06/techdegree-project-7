@@ -15,17 +15,22 @@ const Header = () => {
         </button>
       </form>
 
-      <nav className="main-nav">
-        <ul>
-          <li><a href='#'>Cats</a></li>
-          <li><a href='#'>Dogs</a></li>
-          <li><a href='#'>Computers</a></li>
-        </ul>
-      </nav>
+      <Nav />
     </header>
   );
 }
 
+const Nav = () => {
+  return (
+    <nav className="main-nav">
+      <ul>
+        <li><a href='#'>Cats</a></li>
+        <li><a href='#'>Dogs</a></li>
+        <li><a href='#'>Computers</a></li>
+      </ul>
+    </nav>
+  );
+}
 
 function App() {
   return (
