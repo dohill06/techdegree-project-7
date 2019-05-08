@@ -2,6 +2,7 @@ import React from 'react';
 
 
 
+
 const Header = () => {
   return (
     <header>
@@ -45,10 +46,7 @@ const Gallery = () => {
       <ul>
         <GalleryItem />
         {/*}-- Not Found */}
-        <li className="not-found">
-          <h3>No Results Found</h3>
-          <p>You search did not return any results. Please try again.</p>
-        </li>
+        <NotFound />
       </ul>
     </div>
   );
@@ -70,6 +68,15 @@ const GalleryItem = () => {
         <img src="https://farm5.staticflickr.com/4425/36337012384_ba3365621e.jpg" alt="" />
       </li>
     </React.Fragment>
+  );
+}
+
+const NotFound = () => {
+  return (
+    <li className="not-found">
+      <h3>No Results Found</h3>
+      <p>You search did not return any results. Please try again.</p>
+    </li>
   );
 }
 
