@@ -6,7 +6,7 @@ import Form from './Form';
 const Header = (props) => {
   return (
     <header>
-      <Form formSearch={props.onSearch} />
+      <Form onSearch={props.onSearch} />
 
       <Nav />
     </header>
