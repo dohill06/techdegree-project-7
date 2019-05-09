@@ -38,7 +38,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.searchPic);
     return (
       <BrowserRouter>
         <div className="container">          
