@@ -38,7 +38,7 @@ class App extends Component {
         <div className="container">          
           <Header /> 
 
-          <Gallery /> 
+          <Gallery data={this.state.searchPic} /> 
         </div>
       </BrowserRouter>
     );
