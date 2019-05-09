@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './components/Header';
+import Gallery from './components/Gallery';
 
 import apiKey from './config';
 
@@ -11,18 +12,7 @@ import apiKey from './config';
 
 
 
-const Gallery = () => {
-  return (
-    <div className="photo-container">
-      <h2>Results</h2>
-      <ul>
-        <GalleryItem />
-        {/*}-- Not Found */}
-        <NotFound />
-      </ul>
-    </div>
-  );
-}
+
 
 const GalleryItem = () => {
   return (
