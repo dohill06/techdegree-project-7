@@ -10,10 +10,11 @@ const Gallery = props => {
     
     if (results.length > 0) {
         pics = results.map(pic => 
-            <GalleryItem key={pic.id}
-                url = {
+            <GalleryItem 
+                url={
                 `https://farm${pic.farm}.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}.jpg`
                 }
+                key={pic.id}
             />                    
         );
     } else {
