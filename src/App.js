@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Header from './components/Header';
 
 import apiKey from './config';
@@ -6,17 +7,7 @@ import apiKey from './config';
 
 
 
-const Nav = () => {
-  return (
-    <nav className="main-nav">
-      <ul>
-        <li><a href='#'>Cats</a></li>
-        <li><a href='#'>Dogs</a></li>
-        <li><a href='#'>Computers</a></li>
-      </ul>
-    </nav>
-  );
-}
+
 
 const Form = () => {
   return (
