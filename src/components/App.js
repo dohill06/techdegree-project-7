@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-import Header from './components/Header';
-import Gallery from './components/Gallery';
+import Header from './Header';
+import Gallery from './Gallery';
 
-import apiKey from './config';
+import apiKey from '../config';
 
 
 
