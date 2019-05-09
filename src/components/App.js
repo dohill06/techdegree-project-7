@@ -19,11 +19,10 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container">
-          <Route path="/" component={Header} />
-         { /* <Header />
+        <div className="container">          
+          <Header /> 
 
-         <Gallery /> */}
+          <Gallery /> 
         </div>
       </BrowserRouter>
     );
