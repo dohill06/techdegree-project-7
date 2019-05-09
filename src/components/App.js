@@ -21,14 +21,20 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=sunsets&per_page=24&format=json&nojsoncallback=1`)
+
+  }
+
+  searchFunc(query) {
+    fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then(res => res.json())
       .then(resData => {
-        this.setState({searchPic: resData.photos.photo});
+        this.setState({
+          searchPic: resData.photos.photo
+        });
       })
       .catch(err => {
         console.log('Error fetching and parsing data', err);
-      }); 
+      });
   }
 
   render() {
@@ -36,7 +42,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">          
-          <Header /> 
+          <Header onSearch={this.searchFunc} /> 
 
           <Gallery data={this.state.searchPic} /> 
         </div>

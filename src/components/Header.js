@@ -3,10 +3,10 @@ import React from 'react';
 import Nav from './Nav';
 import Form from './Form';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
-      <Form />
+      <Form formSearch={props.onSearch} />
 
       <Nav />
     </header>
