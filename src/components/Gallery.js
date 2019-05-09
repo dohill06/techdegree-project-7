@@ -1,6 +1,7 @@
 import React from 'react';
 
 import GalleryItem from './GalleryItem';
+import NotFound from './NotFound';
 
 const Gallery = () => {
   return (
