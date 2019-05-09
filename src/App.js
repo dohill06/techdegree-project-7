@@ -1,17 +1,10 @@
 import React from 'react';
+import Header from './components/Header';
 
 import apiKey from './config';
 
 
-const Header = () => {
-  return (
-    <header>
-      <Form />
 
-      <Nav />
-    </header>
-  );
-}
 
 const Nav = () => {
   return (
