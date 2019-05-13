@@ -18,7 +18,8 @@ class App extends Component {
 
   state = {
     searchPic: [],
-    query: ''
+    query: '',
+    loading: true
   };
 
   componentDidMount() {
@@ -31,7 +32,8 @@ class App extends Component {
       .then(resData => {
         this.setState({
           searchPic: resData.photos.photo,
-          query: `${query}`
+          query: `${query}`,
+          loading: false
         });
       })
       .catch(err => {
@@ -42,10 +44,15 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container">          
-          <Header onSearch={this.searchFunc} /> 
-
-          <Gallery data={this.state.searchPic} query={this.state.query} /> 
+        <div className="container"> 
+          {
+            (this.state.loading)
+            ? <p>Loading...</p> 
+            : <React.Fragment>
+                <Header onSearch={this.searchFunc} />               
+                <Gallery data={this.state.searchPic} query={this.state.query} /> 
+              </React.Fragment>
+          }         
         </div>
       </BrowserRouter>
     );
