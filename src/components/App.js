@@ -7,6 +7,7 @@ import {
 
 import Header from './Header';
 import Gallery from './Gallery';
+import NoRoute from './NoRoute';
 
 import apiKey from '../config';
 
@@ -89,6 +90,8 @@ class App extends Component {
                 <Route path="/computers" render={ () => 
                     <Gallery data={this.state.compPic} query="computers" />
                 } />
+
+                <Route component={NoRoute} />
               </Switch>
           }         
         </div>
