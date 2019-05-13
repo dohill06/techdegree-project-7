@@ -14,7 +14,6 @@ class Form extends Component {
         e.preventDefault();
         this.props.onSearch(this.state.searchText);
         e.currentTarget.reset();
-        console.log('yes');
     }
 
     render() {
