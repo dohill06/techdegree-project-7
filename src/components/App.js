@@ -69,29 +69,26 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="container"> 
+          <Header onSearch={this.searchFunc} />
           {
             (this.state.loading)
             ? <p>Loading...</p> 
             : <Switch>
-                <Route exact path="/" render={ () => <React.Fragment>
-                    <Header onSearch={this.searchFunc} />               
-                    <Gallery data={this.state.searchPic} query={this.state.query} /> 
-                  </React.Fragment> } />
+                <Route exact path="/" render={ () =>                                   
+                  <Gallery data={this.state.searchPic} query={this.state.query} /> 
+                } />
                   
-                  <Route path="/cats" render={ () => <React.Fragment>
-                    <Header onSearch={this.searchFunc('cats')} />
-                    <Gallery data={this.state.catPic} query="cats" />
-                  </React.Fragment> } />
+                <Route path="/cats" render={ () => 
+                  <Gallery data={this.state.catPic} query="cats" />
+                } />
 
-                  <Route path="/dogs" render={ () => <React.Fragment>
-                    <Header onSearch={this.searchFunc('dogs')} />
-                    <Gallery data={this.state.dogPic} query="dogs" />
-                  </React.Fragment> } /> 
+                <Route path="/dogs" render={ () => 
+                  <Gallery data={this.state.dogPic} query="dogs" />
+                } /> 
                   
-                  <Route path="/computers" render={ () => <React.Fragment>
-                    <Header onSearch={this.searchFunc('computers')} />
+                <Route path="/computers" render={ () => 
                     <Gallery data={this.state.compPic} query="computers" />
-                  </React.Fragment> } />
+                } />
               </Switch>
           }         
         </div>
