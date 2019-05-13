@@ -79,15 +79,15 @@ class App extends Component {
                   <Gallery data={this.state.searchPic} query={this.state.query} /> 
                 } />
                   
-                <Route path="/cats" render={ () => 
+                <Route exact path="/cats" render={ () => 
                   <Gallery data={this.state.catPic} query="cats" />
                 } />
 
-                <Route path="/dogs" render={ () => 
+                <Route exact path="/dogs" render={ () => 
                   <Gallery data={this.state.dogPic} query="dogs" />
                 } /> 
                   
-                <Route path="/computers" render={ () => 
+                <Route exact path="/computers" render={ () => 
                     <Gallery data={this.state.compPic} query="computers" />
                 } />
 
