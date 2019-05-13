@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {
   BrowserRouter,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 import Header from './Header';
@@ -48,10 +49,17 @@ class App extends Component {
           {
             (this.state.loading)
             ? <p>Loading...</p> 
-            : <React.Fragment>
-                <Header onSearch={this.searchFunc} />               
-                <Gallery data={this.state.searchPic} query={this.state.query} /> 
-              </React.Fragment>
+            : <Switch>
+                <Route exact path="/" render={ () => <React.Fragment>
+                    <Header onSearch={this.searchFunc} />               
+                    <Gallery data={this.state.searchPic} query={this.state.query} /> 
+                  </React.Fragment> } />
+                  
+                  <Route path="/cats" render={ () => <React.Fragment>
+                    <Header onSearch={this.searchFunc('cats')} />
+                    <Gallery data={this.state.searchPic} query={this.state.query} />
+                  </React.Fragment> } />
+              </Switch>
           }         
         </div>
       </BrowserRouter>
