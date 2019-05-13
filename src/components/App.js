@@ -17,7 +17,8 @@ import apiKey from '../config';
 class App extends Component {
 
   state = {
-    searchPic: []
+    searchPic: [],
+    query: ''
   };
 
   componentDidMount() {
@@ -29,7 +30,8 @@ class App extends Component {
       .then(res => res.json())
       .then(resData => {
         this.setState({
-          searchPic: resData.photos.photo
+          searchPic: resData.photos.photo,
+          query: `${query}`
         });
       })
       .catch(err => {
@@ -43,7 +45,7 @@ class App extends Component {
         <div className="container">          
           <Header onSearch={this.searchFunc} /> 
 
-          <Gallery data={this.state.searchPic} /> 
+          <Gallery data={this.state.searchPic} query={this.state.query} /> 
         </div>
       </BrowserRouter>
     );
