@@ -59,6 +59,16 @@ class App extends Component {
                     <Header onSearch={this.searchFunc('cats')} />
                     <Gallery data={this.state.searchPic} query={this.state.query} />
                   </React.Fragment> } />
+
+                  <Route path="/dogs" render={ () => <React.Fragment>
+                    <Header onSearch={this.searchFunc('dogs')} />
+                    <Gallery data={this.state.searchPic} query={this.state.query} />
+                  </React.Fragment> } /> 
+                  
+                  <Route path="/computers" render={ () => <React.Fragment>
+                    <Header onSearch={this.searchFunc('computers')} />
+                    <Gallery data={this.state.searchPic} query={this.state.query} />
+                  </React.Fragment> } />
               </Switch>
           }         
         </div>
