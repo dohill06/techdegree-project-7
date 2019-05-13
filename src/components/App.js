@@ -21,7 +21,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-
+    this.searchFunc();
   }
 
   searchFunc(query) {
