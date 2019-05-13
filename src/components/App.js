@@ -91,6 +91,10 @@ class App extends Component {
                     <Gallery data={this.state.compPic} query="computers" />
                 } />
 
+                <Route exact path="/search/:input" render={ () =>                                   
+                  <Gallery data={this.state.searchPic} query={this.state.query} /> 
+                } />                
+
                 <Route component={NoRoute} />
               </Switch>
           }         
