@@ -4,10 +4,10 @@ import GalleryItem from './GalleryItem';
 import NotFound from './NotFound';
 
 const Gallery = props => {
-
+// pass in props
     const results = props.data;
     let pics;
-    
+    // map over data to render gallery
     if (results.length > 0) {
         pics = results.map(pic => 
             <GalleryItem 
