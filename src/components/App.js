@@ -42,18 +42,15 @@ class App extends Component {
       .then(resData => {
         if (query === 'cats') {
           this.setState({
-            catPic: resData.photos.photo,
-            loading: false
+            catPic: resData.photos.photo
           });
         } else if (query === 'dogs') {
           this.setState({
-            dogPic: resData.photos.photo,
-            loading: false
+            dogPic: resData.photos.photo
           });
         } else if (query === 'computers') {
           this.setState({
-            compPic: resData.photos.photo,
-            loading: false
+            compPic: resData.photos.photo 
           });
         } else if (query === 'house') {
           this.setState({
@@ -78,33 +75,36 @@ class App extends Component {
       <BrowserRouter>
         <div className="container"> 
           <Header onSearch={this.searchFunc} />
-          {
-            (this.state.loading)
-            ? <p>Loading...</p> 
-            : <Switch>
-                <Route exact path="/" render={ () =>                                   
-                  <Gallery data={this.state.homePic} query="Flickr App" /> 
-                } />
-                  
-                <Route exact path="/cats" render={ () => 
-                  <Gallery data={this.state.catPic} query="cats" />
-                } />
+            <Switch>
+              <Route exact path="/" render={ () => 
+                (this.state.loading) 
+                ? 
+                <p>Loading...</p>                               
+                : <Gallery data={this.state.homePic} query="Flickr App" /> 
+              } />
+                
+              <Route exact path="/cats" render={ () => 
+                <Gallery data={this.state.catPic} query="cats" />
+              } />
 
-                <Route exact path="/dogs" render={ () => 
-                  <Gallery data={this.state.dogPic} query="dogs" />
-                } /> 
-                  
-                <Route exact path="/computers" render={ () => 
-                    <Gallery data={this.state.compPic} query="computers" />
-                } />
+              <Route exact path="/dogs" render={ () => 
+                <Gallery data={this.state.dogPic} query="dogs" />
+              } /> 
+                
+              <Route exact path="/computers" render={ () => 
+                  <Gallery data={this.state.compPic} query="computers" />
+              } />
 
-                <Route exact path="/search/:q" render={ () =>                                   
-                  <Gallery data={this.state.searchPic} query={this.state.query} /> 
-                } />                
+              <Route exact path="/search/:q" render={ () =>    
+                (this.state.loading)  
+                ?
+                <p>Loading...</p>                           
+                : <Gallery data={this.state.searchPic} query={this.state.query} /> 
+              } /> 
+                           
 
-                <Route component={NoRoute} />
-              </Switch>
-          }         
+              <Route component={NoRoute} />
+            </Switch>               
         </div>
       </BrowserRouter>
     );
