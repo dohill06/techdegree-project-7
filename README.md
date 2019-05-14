@@ -1,3 +1,8 @@
+Run npm install for dependencies
+Run npm start to start App
+Add config.js file with key for flickr API
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
