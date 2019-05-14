@@ -19,6 +19,7 @@ import apiKey from '../config';
 class App extends Component {
 
   state = {
+    homePic: [],
     searchPic: [],
     catPic: [],
     dogPic: [],
@@ -29,12 +30,13 @@ class App extends Component {
 
   componentDidMount() {
     this.searchFunc();
+    this.searchFunc('house');
     this.searchFunc('cats');
     this.searchFunc('dogs');
     this.searchFunc('computers');
   }
 
-  searchFunc = (query = 'trees') => {
+  searchFunc = (query) => {
     fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then(res => res.json())
       .then(resData => {
@@ -51,6 +53,11 @@ class App extends Component {
         } else if (query === 'computers') {
           this.setState({
             compPic: resData.photos.photo,
+            loading: false
+          });
+        } else if (query === 'house') {
+          this.setState({
+            homePic: resData.photos.photo,
             loading: false
           });
         } else {
@@ -76,7 +83,7 @@ class App extends Component {
             ? <p>Loading...</p> 
             : <Switch>
                 <Route exact path="/" render={ () =>                                   
-                  <Gallery data={this.state.searchPic} query={this.state.query} /> 
+                  <Gallery data={this.state.homePic} query="Flickr App" /> 
                 } />
                   
                 <Route exact path="/cats" render={ () => 
