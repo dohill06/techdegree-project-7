@@ -1,23 +1,20 @@
+// import React and React router
 import React, {Component} from 'react';
 import {
   BrowserRouter,
   Route,
   Switch
 } from 'react-router-dom';
-
+// import needed components
 import Header from './Header';
 import Gallery from './Gallery';
 import NoRoute from './NoRoute';
 
 import apiKey from '../config';
 
-
-
-
-
-
+// create class component
 class App extends Component {
-
+// create needed state
   state = {
     homePic: [],
     searchPic: [],
@@ -27,7 +24,7 @@ class App extends Component {
     query: '',
     loading: true
   };
-
+// run method on load 
   componentDidMount() {
     this.searchFunc();
     this.searchFunc('house');
@@ -35,7 +32,7 @@ class App extends Component {
     this.searchFunc('dogs');
     this.searchFunc('computers');
   }
-
+// fetch data from flickr API
   searchFunc = (query) => {
     this.setState({loading: true})
     fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
@@ -70,7 +67,7 @@ class App extends Component {
         console.log('Error fetching and parsing data', err);
       });
   }
-
+// render page
   render() {
     return (
       <BrowserRouter>
