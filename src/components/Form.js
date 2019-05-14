@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
-
+// search form
 class Form extends Component {
-
+// needed state
     state = {
         searchText: ''
     }
-
+// method to add search value to state
     onSearchChange = e => {
         this.setState({searchText: e.target.value});
     }
-
+// method to handle submit
     handleSubmit = e => {
         e.preventDefault();
         this.props.onSearch(this.q.value);
@@ -20,7 +20,7 @@ class Form extends Component {
         this.props.history.push(path);
         e.currentTarget.reset();        
     }
-
+// render search form 
     render() {
         return (
             <form className="search-form" onSubmit={this.handleSubmit}>

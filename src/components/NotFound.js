@@ -1,5 +1,5 @@
 import React from 'react';
-
+// no search results default
 const NotFound = () => {
   return (
     <li className="not-found">

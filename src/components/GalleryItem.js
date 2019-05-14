@@ -1,5 +1,5 @@
 import React from 'react';
-
+// gallery items to fill gallery
 const GalleryItem = props => {
   return (
       <li>

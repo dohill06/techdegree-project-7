@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-
+// navigation links for header
 const Nav = () => {
   return (
     <nav className="main-nav">
