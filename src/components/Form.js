@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 
 
 class Form extends Component {
@@ -36,4 +37,4 @@ class Form extends Component {
 }
 
 
-export default Form;
+export default withRouter(Form);
