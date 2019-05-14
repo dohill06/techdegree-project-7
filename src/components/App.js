@@ -92,13 +92,13 @@ class App extends Component {
               } /> 
                 
               <Route exact path="/computers" render={ () => 
-                  <Gallery data={this.state.compPic} query="computers" />
+                <Gallery data={this.state.compPic} query="computers" />
               } />
 
-              <Route exact path="/search/:q" render={ () =>    
-                (this.state.loading)  
-                ?
-                <p>Loading...</p>                           
+              <Route exact path="/search/:q" render={ () => 
+                (this.state.loading) 
+                ? 
+                <p>Loading...</p>                    
                 : <Gallery data={this.state.searchPic} query={this.state.query} /> 
               } /> 
                            
