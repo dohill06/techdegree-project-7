@@ -37,6 +37,7 @@ class App extends Component {
   }
 
   searchFunc = (query) => {
+    this.setState({loading: true})
     fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then(res => res.json())
       .then(resData => {
