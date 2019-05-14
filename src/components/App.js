@@ -102,7 +102,6 @@ class App extends Component {
                 : <Gallery data={this.state.searchPic} query={this.state.query} /> 
               } /> 
                            
-
               <Route component={NoRoute} />
             </Switch>               
         </div>
