@@ -1,5 +1,11 @@
+# React Gallery
+
+This image gallery app was created using React. Using React Router, routes are set up for three default topic pages and a search page. Images are displayed from the Flickr API using Axios to fetch data. This project was created for the purpose of the Treehouse Full Stack JavaScript Techdegree.
+
 Run npm install for dependencies
+
 Run npm start to start App
+
 Add config.js file with key for flickr API
 
 
